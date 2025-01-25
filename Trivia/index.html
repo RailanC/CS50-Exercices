@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            <!--Part 1-->
+            document.addEventListener('DOMContentLoaded', function(){
+                let correctOpt = document.querySelectorAll('.correct');
+
+                for(let i = 0; i < correctOpt.length; i++){
+                    correctOpt[i].addEventListener('click', function(){
+                        correctOpt[i].style.backgroundColor = 'Green';
+                        correctOpt[i].parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                    });
+                }
+
+                let wrongOpt = document.querySelectorAll('.wrong');
+                for(let i = 0; i < wrongOpt.length; i++){
+                    wrongOpt[i].addEventListener('click', function(){
+                        wrongOpt[i].style.backgroundColor = 'Red';
+                        wrongOpt[i].parentElement.querySelector('.feedback').innerHTML = 'Wrong!';
+                    });
+                }
+                <!--Part 2-->
+                document.querySelector('#check').addEventListener('click', function(){
+                    let input = document.querySelector('input');
+
+                    if(input.value === 'Noah'){
+                        input.style.backgroundColor = 'Green';
+                        input.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                    }else{
+                        input.style.backgroundColor = 'Red';
+                        input.parentElement.querySelector('.feedback').innerHTML = 'Wrong!';
+                    }
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>How many books the bible have?</h3>
+                <button class="wrong">02</button>
+                <button class="wrong">53</button>
+                <button class="correct">66</button>
+                <button class="wrong">43</button>
+                <button class="wrong">01</button>
+                <button class="wrong">27</button>
+                <p class="feedback"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is the name of the person who placed the animals in the ARK (Bible)</h3>
+                <input type='text'></input>
+                <button id='check'>Check Answer</button>
+                <p class='feedback'></p>
+            </div>
+        </div>
+    </body>
+</html>

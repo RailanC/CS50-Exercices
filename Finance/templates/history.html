@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div>
+        {% if data %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                    <tr>
+                        <td>{{row.symbol}}</td>
+                        <td>{{row.quantity}}</td>
+                        <td>{{row.amount}}</td>
+                        <td>{{row.data}}</td>
+                        {% if row.type == "sold"%}
+                            <td class="table-danger">{{row.type}}</td>
+                        {% else %}
+                            <td class="table-success">{{row.type}}</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+{% endblock%}

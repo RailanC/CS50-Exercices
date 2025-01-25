@@ -1,0 +1,24 @@
+.card{
+    width: 300px;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.imgContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:80%;
+ }
+
+ .imgContainer img{
+    width: 200px;
+    height: 200px;
+    margin:10px;
+ }
